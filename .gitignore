@@ -1,91 +1,101 @@
-package Juego;
-import java.util.Random;
-
-public class Jugador {
-
-    private int ATK;
-    private int DEF;
-
-    public Jugador() {
-    }
-
-    public Jugador(int ATK, int DEF) {
-        this.ATK = ATK;
-        this.DEF = DEF;
-    }
-
-    public int getATK() {
-        return ATK;
-    }
-
-    public void setATK(int ATK) {
-        this.ATK = ATK;
-    }
-
-    public int getDEF() {
-        return DEF;
-    }
-
-    public void setDEF(int DEF) {
-        this.DEF = DEF;
-    }
-    public void barajearCartas (){
-        
-    int[] mazoGeneral = {0,1,2,3,4,5,6,7,8,9};  
-    int[] mazo1 = {};
-    int[] mazo2 = {};
+public class Cartas {
     
-    barajear(mazoGeneral);
+    private int Atk;
+    private int Def;
+    private int Fuego;
+    private int Viento;
+    private int Rayo;
+    private int Tierra;
+    private int Agua;
+
+    public Cartas() {
+    }
+
+    public Cartas(int Atk, int Def, int Fuego, int Viento, int Rayo, int Tierra, int Agua) {
+        this.Atk = Atk;
+        this.Def = Def;
+        this.Fuego = Fuego;
+        this.Viento = Viento;
+        this.Rayo = Rayo;
+        this.Tierra = Tierra;
+        this.Agua = Agua;
+    }
+
+    public int getAtk() {
+        return Atk;
+    }
+
+    public void setAtk(int Atk) {
+        this.Atk = Atk;
+    }
+
+    public int getDef() {
+        return Def;
+    }
+
+    public void setDef(int Def) {
+        this.Def = Def;
+    }
+
+    public int getFuego() {
+        return Fuego;
+    }
+
+    public void setFuego(int Fuego) {
+        this.Fuego = Fuego;
+    }
+
+    public int getViento() {
+        return Viento;
+    }
+
+    public void setViento(int Viento) {
+        this.Viento = Viento;
+    }
+
+    public int getRayo() {
+        return Rayo;
+    }
+
+    public void setRayo(int Rayo) {
+        this.Rayo = Rayo;
+    }
+
+    public int getTierra() {
+        return Tierra;
+    }
+
+    public void setTierra(int Tierra) {
+        this.Tierra = Tierra;
+    }
+
+    public int getAgua() {
+        return Agua;
+    }
+
+    public void setAgua(int Agua) {
+        this.Agua = Agua;
+    }
     
-        
-    }
-    public void barajear(int[] mazo){
- 
-        int mazoLeer [] = new int [10];
-        
-        Random random = new Random();
-        
-        for (int k = 0; k < mazoLeer.length ; k++){
-            
-            int indicesRandom = k + random.nextInt();
-            
-            int intercambiar = mazo[indicesRandom];
-            mazo[indicesRandom] = mazo[k];
-            mazo[k]=intercambiar;
-            
-            System.out.println("intercambiar = " + intercambiar);
-        }
-        
+////    /public void mostrarCartas(){
+////       
+////        System.out.println("    CARTA      ");
+////        System.out.println("Def: "+this.Def);
+////        System.out.println("Atk: "+this.Atk);
+////        System.out.println("    PODERES     ");
+////        System.out.println("Fuego: "+this.Fuego);
+//        System.out.println("Viento: "+this.Viento);
+//        System.out.println("Rayo: "+this.Rayo);
+//        System.out.println("Tierra: "+this.Tierra);
+//        System.out.println("Agua: "+this.Agua);
+//         
+//   }
+
+    @Override
+    public String toString() {
+        return "Cartas{" + "Atk=" + Atk + ", Def=" + Def + ", Fuego=" + Fuego + ", Viento=" + Viento + ", Rayo=" + Rayo + ", Tierra=" + Tierra + ", Agua=" + Agua + '}';
     }
     
-    public void dado() {
-
-        int dado1 = (int) (Math.random() * 6);
-        int dado2 = (int) (Math.random() * 6);
-
-        if (dado1 > dado2) {
-            System.out.println("Turno jugador 1 \nsaco dado: "+dado1);
-        } else {
-            System.out.println("Turno jugador 2 \nsaco dado: "+dado2);
-        }
-
-    }
-
-}
-
-
-package Juego;
-
-public class main {
     
-    public static void main (String args []){
-        
-        Jugador j1 = new Jugador ();
-        
-        int mazo [] = {0,1,2,3,4,5,6,7,8,9};
-        
-        j1.barajear(mazo);
-        
-    }
     
 }

@@ -1,0 +1,45 @@
+public static void main(String[] args) {
+        
+        Cartas cartas[] = new Cartas[10];
+        
+        Cartas cartaA = new Cartas(900,500,2,3,4,5,2);
+        Cartas cartaB = new Cartas(400,500,2,3,4,5,2);
+        Cartas cartaC = new Cartas(700,500,2,3,4,5,2);
+        Cartas cartaD = new Cartas(800,500,2,3,4,5,2);
+        Cartas cartaE = new Cartas(300,500,2,3,4,5,2);
+        Cartas cartaF = new Cartas(500,500,2,3,4,5,2);
+        Cartas cartaG = new Cartas(100,900,2,3,4,5,2);
+        Cartas cartaH = new Cartas(300,700,2,3,4,5,2);
+        Cartas cartaI = new Cartas(600,900,2,3,4,5,2);
+        Cartas cartaJ = new Cartas(400,800,2,3,4,5,2);
+        
+        int mazoGeneral [] = {1,2,3,4,5,6,7,8,9,10};
+        int mazoJugador1 [] = new int [5];
+        int mazoJugador2 [] = new int [5];
+        
+        for (int i = mazoGeneral.length - 1; i > 0; i-- ){
+            
+            var x = (int) Math.floor(Math.random()*(i+1));
+            var temporal = mazoGeneral[i];
+            mazoGeneral[i] = mazoGeneral[x];
+            mazoGeneral[x] = temporal;
+        }
+        for (int i = 0; i < mazoGeneral.length; i++  ){
+        
+            
+            System.out.println("Carta "+i+" "+mazoGeneral[i]+" ");
+            
+            if(mazoGeneral[i]==1){
+                cartas[i] = cartaA;
+                System.out.println("Carta "+i+ " "+cartas[i]);
+                
+            }else if(mazoGeneral[i]==2){
+                cartas[i] = cartaB;
+                System.out.println("Carta "+i+ " "+cartas[i]);
+                
+            }
+        
+    }
+            
+            
+    }

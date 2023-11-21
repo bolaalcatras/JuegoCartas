@@ -1,7 +1,7 @@
 public class Cartas {
     
-    private int Atk;
     private int Def;
+    private int Atk;
     private int Fuego;
     private int Viento;
     private int Rayo;
@@ -10,23 +10,16 @@ public class Cartas {
 
     public Cartas() {
     }
+    
 
-    public Cartas(int Atk, int Def, int Fuego, int Viento, int Rayo, int Tierra, int Agua) {
-        this.Atk = Atk;
+    public Cartas(int Def, int Atk, int Fuego, int Viento, int Rayo, int Tierra, int Agua) {
         this.Def = Def;
+        this.Atk = Atk;
         this.Fuego = Fuego;
         this.Viento = Viento;
         this.Rayo = Rayo;
         this.Tierra = Tierra;
         this.Agua = Agua;
-    }
-
-    public int getAtk() {
-        return Atk;
-    }
-
-    public void setAtk(int Atk) {
-        this.Atk = Atk;
     }
 
     public int getDef() {
@@ -35,6 +28,14 @@ public class Cartas {
 
     public void setDef(int Def) {
         this.Def = Def;
+    }
+
+    public int getAtk() {
+        return Atk;
+    }
+
+    public void setAtk(int Atk) {
+        this.Atk = Atk;
     }
 
     public int getFuego() {
@@ -76,26 +77,27 @@ public class Cartas {
     public void setAgua(int Agua) {
         this.Agua = Agua;
     }
-    
-////    /public void mostrarCartas(){
-////       
-////        System.out.println("    CARTA      ");
-////        System.out.println("Def: "+this.Def);
-////        System.out.println("Atk: "+this.Atk);
-////        System.out.println("    PODERES     ");
-////        System.out.println("Fuego: "+this.Fuego);
-//        System.out.println("Viento: "+this.Viento);
-//        System.out.println("Rayo: "+this.Rayo);
-//        System.out.println("Tierra: "+this.Tierra);
-//        System.out.println("Agua: "+this.Agua);
-//         
-//   }
 
     @Override
     public String toString() {
-        return "Cartas{" + "Atk=" + Atk + ", Def=" + Def + ", Fuego=" + Fuego + ", Viento=" + Viento + ", Rayo=" + Rayo + ", Tierra=" + Tierra + ", Agua=" + Agua + '}';
+     
+        return "    Carta    \nDef: " + Def + "\nAtk: " + Atk + "\n    PODERES    " + "\nFuego: " + Fuego + "\nViento: " + Viento + "\nRayo: " + Rayo + "\nTierra: " + Tierra + "\nAgua: " + Agua + " ";
+        
     }
     
+    public void barajear(Cartas MazoGeneral[]){
+        
+        int mazoGeneral[] = {0,1,2,3,4,5,6,7,8,9};
+        
+        for (int i = mazoGeneral.length - 1; i > 0 ; i--){
+            
+            var x = (int) Math.floor(Math.random()*(i+1));
+            var tempora = mazoGeneral[i];
+            mazoGeneral[i] = mazoGeneral[x];
+            mazoGeneral[x] = tempora;
+        }
+        
+    }
     
     
 }

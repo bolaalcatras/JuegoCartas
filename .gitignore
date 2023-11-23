@@ -58,6 +58,7 @@ public class Cartas {
         return Rayo;
     }
 
+    
     public void setRayo(int Rayo) {
         this.Rayo = Rayo;
     }
@@ -85,16 +86,14 @@ public class Cartas {
         
     }
     
-    public void barajear(Cartas MazoGeneral[]){
+    public void ataque(Cartas jugador2){
         
-        int mazoGeneral[] = {0,1,2,3,4,5,6,7,8,9};
-        
-        for (int i = mazoGeneral.length - 1; i > 0 ; i--){
+        if(this.Atk>jugador2.Atk){
             
-            var x = (int) Math.floor(Math.random()*(i+1));
-            var tempora = mazoGeneral[i];
-            mazoGeneral[i] = mazoGeneral[x];
-            mazoGeneral[x] = tempora;
+            System.out.println("Ataca jugador 1");
+            jugador2.Def = jugador2.Def - this.Atk;
+            
+            System.out.println("vida"+jugador2.Def);
         }
         
     }
